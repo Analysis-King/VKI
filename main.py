@@ -3,17 +3,17 @@ from tkinter import messagebox
 
 #window
 window = tk.Tk()
-window.title("Pyton Tkinter")
+window.title("VKİ Hesaplama")
 window.minsize(width=450, height=300)
 
 #label
-lWeight=tk.Label(text="Enter Your Weight (kg)", font=('Arial',12))
+lWeight=tk.Label(text="Kilonuzu giriniz (kg)", font=('Arial',12))
 lWeight.pack()
 #weight
 tWeight = tk.Entry()
 tWeight.pack()
 #label
-lHeight=tk.Label(text="Enter Your Height (cm)", font=('Arial',12))
+lHeight=tk.Label(text="Boyunuzu giriniz (cm)", font=('Arial',12))
 lHeight.pack()
 #weight
 tHeight = tk.Entry()
@@ -24,8 +24,6 @@ def vki (weight:int,height:int):
     return weight / ((height / 100) ** 2)
 
 def vki_d(vki_):
-
-
     if vki_ <18.50:
         return "Düşük kilolu"
     elif 18.49 < vki_ < 24.99:
@@ -43,14 +41,14 @@ def click_button():
         if tWeight.get().isnumeric() and tWeight.get().isnumeric():
             vkiSonucu = vki(int(tW), int(tH))
             metin = vki_d(vkiSonucu)
-            messagebox.showinfo("Uyari", f"VKI = {vkiSonucu}, {metin}")
+            messagebox.showinfo("Uyarı", f"VKİ = {vkiSonucu}, {metin}")
         else:
-            messagebox.showwarning("Uyari", "Lutfen bir sayi giriniz")
+            messagebox.showwarning("Uyarı", "Lütfen bir sayı giriniz")
 
     else:
-        messagebox.showinfo("Uyari", "Lutfen Verileri Giriniz")
+        messagebox.showinfo("Uyarı", "Lütfen verileri giriniz")
 
-my_button = tk.Button(text= "Calculate", command = click_button)
+my_button = tk.Button(text= "Hesapla", command = click_button)
 my_button.pack()
 
 
